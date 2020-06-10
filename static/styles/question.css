@@ -1,0 +1,80 @@
+form {
+	margin: 0;
+}
+
+.home {
+	color: white;
+	display: inline;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	margin-left: 25px;
+	font-style: none;
+}
+
+.home a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+}
+
+.home:hover a {
+	transition-duration: .2s;
+	color: #ffc107;
+}
+
+.questions_block {
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	margin: 3% auto;
+	flex-wrap: wrap;
+	background: lightgray;
+	border: 1px solid gray;	
+}
+
+.question {
+	background: white;
+	width: 47.94%; 
+	padding: 10px 10px 0 15px;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.question:nth-child(odd) {
+	border-bottom: .3px solid gray;
+	border-right: .3px solid gray;
+}
+
+.question:nth-child(even) {
+	border-bottom: .3px solid gray;
+}
+
+.answer_list {
+	list-style: none;
+}
+
+.number {
+	font-size: 17px;
+	font-weight: bold;
+	display:  inline-block;
+	margin: 0;
+}
+
+.condition {
+	display: inline-block;
+	margin: 0;
+	margin-left: 20px;
+}
+
+.submit {
+	width: 100px;
+	height: 45px;
+	background: #005a65f0;
+	color: #fff;
+	border-radius: 5%;
+	font-size: 16px;
+	margin: auto;
+}
+
+/*.base {
+	margin: 0;
+}*/

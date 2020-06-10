@@ -5,7 +5,7 @@ from .models import *
 
 def tasks_list(request):
     all_tasks = Introduction.objects.all()
-    return render(request, 'tasks/task.html', locals())
+    return render(request, 'tasks/index.html', locals())
 
 def questions_list(request, pk):
     answered = False

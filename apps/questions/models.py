@@ -7,6 +7,7 @@ RIGHT_ANSWER_CHOICE = [
     ('д_вариант', 'Д_ВАРИАНТ'),
     ]
 
+
 class Introduction(models.Model):
     номер = models.PositiveIntegerField()
     имя = models.CharField(max_length = 255)
