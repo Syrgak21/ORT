@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
-{% block 'content' %}
-
-<p>{{task.балл}}</p>
-
+{% block content %}
 {% for i in all_questions %}
             <h1>{{i.номер}}</h1>
             <p>{{i.условие}}</p>
@@ -30,12 +27,13 @@
                 <label for="fifth">{{i.д_вариант}}</label>
             </div>
             {% if answered %}
-                <p>Твой вариант: {{answers}}</p>
-                <p>Правильный ответ: {{i.правильный_вариант}}</p>
+                <p>Твой вариант: {{i.answer.отмеченный_вариант}}</p>
+                <p>Правильный ответ: {{i.answer.правильный_вариант}}</p>
                 <details>
-                    <summary>Объяснение</summary>
-                    <p>{{i.объяснение}}</p>
+                    <summary>Объяснение</summary>>
+                    {{i.answer.объяснение}}
                 </details>
             {% endif %}
             {% endfor %}
-{% endblock %}
+            <p>{{task.балл}}</p>
+{% endblock content %}
