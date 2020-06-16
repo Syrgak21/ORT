@@ -12,9 +12,9 @@ form {
 }
 
 .home a {
-  text-decoration: none;
-  color: white;
-  padding: 15px;
+	text-decoration: none;
+	color: white;
+	padding: 15px;
 }
 
 .home:hover a {
@@ -22,40 +22,85 @@ form {
 	color: #ffc107;
 }
 
+#countdown {
+	width: 100px;
+	margin: auto;
+	margin-top: 30px;
+	border: 1px solid #005a65f0;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 23px;
+	color: #005a65f0;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 2px;
+	box-shadow: 1px 1px 10px #005a656b; 
+}
+
 .questions_block {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+  	grid-template-rows: repeat(4, 1fr);
+  	grid-gap: 0 0;
+  	grid-auto-flow: column;
 	width: 85%;
 	margin: 3% auto;
-	flex-wrap: wrap;
 	background: lightgray;
-	border: 1px solid gray;	
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
 }
 
 .question {
 	background: white;
-	width: 47.94%; 
 	padding: 10px 10px 0 15px;
 	font-family: 'PT Sans', sans-serif;
-}
-
-.question:nth-child(odd) {
 	border-bottom: .3px solid gray;
 	border-right: .3px solid gray;
 }
 
-.question:nth-child(even) {
-	border-bottom: .3px solid gray;
-}
-
 .answer_list {
 	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.answer {
+	width: 90%;
+	height: 25px;
+	background: #d3d3d35e;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 6px;
+	padding: 10px;
+	border-radius: 7px;
+	position: relative;
+}
+
+.answer input {
+	height: 20px;
+	width: 20px;
+}
+
+.tick {
+	width: 18px;
+	height: 17px;
+	position: absolute;
+	display: none;
+	top: 14px;
+	left: 13px;
+}
+
+.answer label {
+	position: absolute;
+	width: 90%;
+	left: 45px;
+	top: 0;
+	padding: 10px 0;
+	cursor: pointer;
 }
 
 .number {
 	font-size: 17px;
 	font-weight: bold;
-	display:  inline-block;
+	display: inline-block;
 	margin: 0;
 }
 
@@ -63,18 +108,105 @@ form {
 	display: inline-block;
 	margin: 0;
 	margin-left: 20px;
+	font-size: 18px;
 }
 
 .submit {
-	width: 100px;
-	height: 45px;
+	width: 170px;
+	height: 50px;
 	background: #005a65f0;
+	margin: 20px 0 80px 44%;
+	border-radius: 50px;
 	color: #fff;
-	border-radius: 5%;
-	font-size: 16px;
-	margin: auto;
+	font-size: 15px;
+	cursor: pointer;
 }
 
-/*.base {
-	margin: 0;
-}*/
+.submit:hover {
+	background: transparent;
+	color: #005a65f0;
+	box-shadow: 1px 1px 5px #005a656b;
+	transition-duration: .4s;
+	border: .5px solid #005a65f0;
+	font-size: 16px;
+}
+
+.dialog-ovelay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 999999
+}
+.dialog-ovelay .dialog {
+    width: 400px;
+    margin: 100px auto 0;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 3px;
+    overflow: hidden
+}
+.dialog-ovelay .dialog header {
+    padding: 10px 8px;
+    background-color: #f6f7f9;
+    border-bottom: 1px solid #e5e5e5
+}
+.dialog-ovelay .dialog header h3 {
+    font-size: 14px;
+    margin: 0;
+    color: #555;
+    display: inline-block
+}
+.dialog-ovelay .dialog header .fa-close {
+    float: right;
+    color: #c4c5c7;
+    cursor: pointer;
+    transition: all .5s ease;
+    padding: 0 2px;
+    border-radius: 1px    
+}
+.dialog-ovelay .dialog header .fa-close:hover {
+    color: #b9b9b9
+}
+.dialog-ovelay .dialog header .fa-close:active {
+    box-shadow: 0 0 5px #673AB7;
+    color: #a2a2a2
+}
+.dialog-ovelay .dialog .dialog-msg {
+    padding: 12px 10px
+}
+.dialog-ovelay .dialog .dialog-msg p{
+    margin: 0;
+    font-size: 15px;
+    color: #333
+}
+.dialog-ovelay .dialog footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 8px 10px
+}
+.dialog-ovelay .dialog footer .controls {
+    direction: rtl
+}
+.dialog-ovelay .dialog footer .controls .button {
+    padding: 5px 15px;
+    border-radius: 3px
+}
+.button {
+  cursor: pointer
+}
+.button-default {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    color: #5D5D5D;
+}
+.button-danger {
+    background-color: #f44336;
+    border: 1px solid #d32f2f;
+    color: #f5f5f5
+}
+.link {
+  padding: 5px 10px;
+  cursor: pointer
+}

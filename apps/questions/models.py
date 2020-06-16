@@ -1,6 +1,5 @@
 from django.db import models
 
-
 RIGHT_ANSWER_CHOICE = [
     ('а_вариант', 'А_ВАРИАНТ'),
     ('б_вариант', 'Б_ВАРИАНТ'),
@@ -12,8 +11,6 @@ RIGHT_ANSWER_CHOICE = [
 
 class Introduction(models.Model):
     номер = models.PositiveIntegerField()
-    имя = models.CharField(max_length = 255)
-    введение = models.TextField()
     балл = models.PositiveIntegerField(default = 0)
 
 class Question(models.Model):
@@ -25,7 +22,7 @@ class Question(models.Model):
     в_вариант = models.CharField(max_length = 100, null = True, blank = True)
     г_вариант = models.CharField(max_length = 100, null = True, blank = True)
     д_вариант = models.CharField(max_length = 100, null = True, blank = True)
-    объяснение = models.TextField(null = True, blank = True)
+
 
 class Answer(models.Model):
     вопрос = models.OneToOneField(Question, on_delete = models.CASCADE, related_name = 'answer')

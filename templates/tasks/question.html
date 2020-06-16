@@ -2,11 +2,16 @@
 {% block 'content' %}
 {% load static %}
 
-{% block extrahead %}
+{% block 'extrahead' %}
 <link rel="stylesheet" href="{% static 'styles/question.css' %}">
 {% endblock %}
+                        {# Timer #}
 
-    <form method="POST" class="allforms">
+<p id="countdown">30:00</p>
+
+                        {# Questions #}
+
+    <form method="POST" class="allforms" name='theForm'>
     <div class="questions_block">
     {% for i in all_questions %}
     <div class="question">
@@ -15,33 +20,33 @@
         {# <p class="base">{{i.введение}}</p> #}
         {% csrf_token %}
         <ul class="answer_list">
-            <li class="answer">(а)
-                <input type="radio" id="first" value="а_вариант" name={{i.номер}}>
-                {{i.a_вариант}}
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}1" value="а_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}1">{{i.a_вариант}}</label>
             </li>
-            <li class="answer">(б)
-                <input type="radio" id="second" value="б_вариант" name={{i.номер}}>
-                {{i.б_вариант}}
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}2" value="б_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}2">{{i.б_вариант}}</label>
             </li>
-            <li class="answer">(в)
-                <input type="radio" id="third" value="в_вариант" name={{i.номер}}>
-                {{i.в_вариант}}
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}3" value="в_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}3">{{i.в_вариант}}</label>
             </li>
-            <li class="answer">(г)
-                <input type="radio" id="fourth" value="г_вариант" name={{i.номер}}>
-                {{i.г_вариант}}
-            </li>
-            <li class="answer">(д)
-                <input type="radio" id="fifth" value="д_вариант" name={{i.номер}}>
-                {{i.д_вариант}}
+            <li class="answer">
+                <img src="{% static 'images/tick.png' %}" class="tick">
+                <input type="radio" id="{{i.номер}}4" value="г_вариант" name={{i.номер}}>
+                <label for="{{i.номер}}4">{{i.г_вариант}}</label>
             </li>
         </ul>
     </div>
         {% endfor %}
     </div>
-        <div>
-            <button type="submit" class="submit">Submit</button>
-        </div>
+    <button class="submit">Закончить тест</button>
 </form>
 
+
 {% endblock %}
+
